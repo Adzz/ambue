@@ -1,20 +1,46 @@
 # Ambue
 
-To start your Phoenix server:
+To get started I added a Makefile, so you can run the following:
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+### Booting the App
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+The very first time:
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+```sh
+make start_db_hidden
+mix ecto.create
+MIX_ENV=test mix ecto.create
+make migrate
+make start
+```
 
-## Learn more
+Thereafter:
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+Start the db:
+
+```sh
+make start_db_hidden
+```
+
+The app:
+```sh
+make start
+```
+
+
+### Tests
+
+The very first time:
+
+```sh
+make start_db_hidden
+mix ecto.create
+MIX_ENV=test  mix ecto.create
+mix test
+```
+
+Thereafter:
+
+```sh
+mix test
+```
