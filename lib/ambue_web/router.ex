@@ -16,7 +16,6 @@ defmodule AmbueWeb.Router do
 
   scope "/", AmbueWeb do
     pipe_through(:browser)
-
     live("/", PageLive, :index)
   end
 

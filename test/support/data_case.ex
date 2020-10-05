@@ -21,7 +21,6 @@ defmodule Ambue.DataCase do
       alias Ambue.Repo
 
       import Ecto
-      import Ecto.Changeset
       import Ecto.Query
       import Ambue.DataCase
     end
